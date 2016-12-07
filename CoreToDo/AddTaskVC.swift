@@ -13,7 +13,7 @@ class AddTaskVC: UIViewController {
     //Linking the view items into the code
     
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var isImportantSwitch: UISwitch!
+    @IBOutlet weak var importance: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +32,7 @@ class AddTaskVC: UIViewController {
         
         //we save the name and the importance onto coredata.
         task.name = textField.text!
-        task.isImportant = isImportantSwitch.isOn
-        
-        //save the context
+        task.importance = Int64(importance.selectedSegmentIndex)     //save the context
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         //close the actual window

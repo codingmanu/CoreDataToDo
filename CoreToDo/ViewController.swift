@@ -43,11 +43,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let task = tasks[indexPath.row]
         
-        if task.isImportant{
+        switch task.importance {
+        case 0:
+            cell.textLabel?.text = "⭕️\(task.name!)"
+        case 1:
+            cell.textLabel?.text = "❗️\(task.name!)"
+        case 2:
+            cell.textLabel?.text = "‼️\(task.name!)"
+        default:
+            cell.textLabel?.text = "Error"
+        }
+        
+        /*if task.isImportant{
             cell.textLabel?.text = "😂\(task.name!)"
         }else{
             cell.textLabel?.text = task.name
-        }
+        }*/
         
         return cell
     }

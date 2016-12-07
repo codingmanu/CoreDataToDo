@@ -68,11 +68,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E3i-xl-hjz">
-                                <rect key="frame" x="163" y="169" width="51" height="31"/>
-                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cS-Wr-XQ6">
-                                <rect key="frame" x="136" y="225" width="103" height="42"/>
+                                <rect key="frame" x="136" y="212" width="103" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Add Task">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -82,21 +79,31 @@
                                     <action selector="addTaskButtonTapped:" destination="E2M-42-8bl" eventType="touchUpInside" id="zcj-9E-Vzm"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g2A-oC-j1p">
+                                <rect key="frame" x="36" y="164" width="303" height="29"/>
+                                <segments>
+                                    <segment title="Min"/>
+                                    <segment title="Normal"/>
+                                    <segment title="Max"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="7cS-Wr-XQ6" firstAttribute="centerX" secondItem="ql4-PK-3bU" secondAttribute="centerX" id="3p5-OF-UUE"/>
+                            <constraint firstItem="7cS-Wr-XQ6" firstAttribute="top" secondItem="g2A-oC-j1p" secondAttribute="bottom" constant="20" id="5n5-Ew-Sgf"/>
                             <constraint firstItem="uwf-gy-FZk" firstAttribute="leading" secondItem="ql4-PK-3bU" secondAttribute="leadingMargin" constant="20" id="EdS-uW-nzY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uwf-gy-FZk" secondAttribute="trailing" constant="20" id="HyW-ZI-Xog"/>
-                            <constraint firstItem="E3i-xl-hjz" firstAttribute="centerX" secondItem="ql4-PK-3bU" secondAttribute="centerX" id="Tag-vo-3YB"/>
-                            <constraint firstItem="7cS-Wr-XQ6" firstAttribute="top" secondItem="E3i-xl-hjz" secondAttribute="bottom" constant="25" id="hQV-0f-57e"/>
-                            <constraint firstItem="E3i-xl-hjz" firstAttribute="top" secondItem="uwf-gy-FZk" secondAttribute="bottom" constant="25" id="jS4-TV-ELC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g2A-oC-j1p" secondAttribute="trailing" constant="20" id="OP3-w7-gxN"/>
+                            <constraint firstItem="g2A-oC-j1p" firstAttribute="top" secondItem="uwf-gy-FZk" secondAttribute="bottom" constant="20" id="PM7-KI-SSx"/>
+                            <constraint firstItem="g2A-oC-j1p" firstAttribute="leading" secondItem="ql4-PK-3bU" secondAttribute="leadingMargin" constant="20" id="Pio-AJ-NoN"/>
+                            <constraint firstItem="g2A-oC-j1p" firstAttribute="centerX" secondItem="ql4-PK-3bU" secondAttribute="centerX" id="gFf-DS-Cwj"/>
                             <constraint firstItem="uwf-gy-FZk" firstAttribute="centerX" secondItem="ql4-PK-3bU" secondAttribute="centerX" id="qtk-PP-rHY"/>
                             <constraint firstItem="uwf-gy-FZk" firstAttribute="top" secondItem="3eF-Xo-lZK" secondAttribute="bottom" constant="50" id="y4N-oA-weI"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="isImportantSwitch" destination="E3i-xl-hjz" id="5NX-q8-OLL"/>
+                        <outlet property="importance" destination="g2A-oC-j1p" id="kxl-vC-iza"/>
                         <outlet property="textField" destination="uwf-gy-FZk" id="mPm-zl-Qci"/>
                     </connections>
                 </viewController>

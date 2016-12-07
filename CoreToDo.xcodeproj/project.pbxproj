@@ -13,6 +13,7 @@
 		806CF36A1DF7AECE00E36847 /* CoreToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 806CF3681DF7AECE00E36847 /* CoreToDo.xcdatamodeld */; };
 		806CF36C1DF7AECE00E36847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 806CF36B1DF7AECE00E36847 /* Assets.xcassets */; };
 		806CF36F1DF7AECE00E36847 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 806CF36D1DF7AECE00E36847 /* LaunchScreen.storyboard */; };
+		80A6F2FD1DF7B24400E6645A /* AddTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6F2FC1DF7B24400E6645A /* AddTaskVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		806CF36B1DF7AECE00E36847 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		806CF36E1DF7AECE00E36847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		806CF3701DF7AECE00E36847 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80A6F2FC1DF7B24400E6645A /* AddTaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				806CF3611DF7AECE00E36847 /* AppDelegate.swift */,
 				806CF3631DF7AECE00E36847 /* ViewController.swift */,
 				806CF3651DF7AECE00E36847 /* Main.storyboard */,
+				80A6F2FC1DF7B24400E6645A /* AddTaskVC.swift */,
 				806CF36B1DF7AECE00E36847 /* Assets.xcassets */,
 				806CF36D1DF7AECE00E36847 /* LaunchScreen.storyboard */,
 				806CF3701DF7AECE00E36847 /* Info.plist */,
@@ -99,6 +102,7 @@
 				TargetAttributes = {
 					806CF35D1DF7AECE00E36847 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 2L722N9NTE;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -142,6 +146,7 @@
 				806CF3641DF7AECE00E36847 /* ViewController.swift in Sources */,
 				806CF3621DF7AECE00E36847 /* AppDelegate.swift in Sources */,
 				806CF36A1DF7AECE00E36847 /* CoreToDo.xcdatamodeld in Sources */,
+				80A6F2FD1DF7B24400E6645A /* AddTaskVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +269,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2L722N9NTE;
 				INFOPLIST_FILE = CoreToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.msgomezm.CoreToDo;
@@ -276,6 +283,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2L722N9NTE;
 				INFOPLIST_FILE = CoreToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.msgomezm.CoreToDo;
@@ -303,6 +312,7 @@
 				806CF3751DF7AECE00E36847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

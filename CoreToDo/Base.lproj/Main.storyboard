@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,6 +44,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="L3F-sX-yxT" id="jfq-XU-GSx"/>
+                        <segue destination="7ku-pq-vhh" kind="show" identifier="showDetail" id="Z92-Pc-aff"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -119,7 +121,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COl-e9-esr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1917.5999999999999" y="792.95352323838085"/>
+            <point key="canvasLocation" x="2095" y="793"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="8dv-Vj-LiS">
+            <objects>
+                <viewController id="7ku-pq-vhh" customClass="detailViewController" customModule="CoreToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nWI-hB-0st"/>
+                        <viewControllerLayoutGuide type="bottom" id="bbG-Np-0jv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6qb-jd-izn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyF-b4-BLV">
+                                <rect key="frame" x="26" y="164" width="323" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vbk-PI-rCn">
+                                <rect key="frame" x="99" y="224" width="176" height="29"/>
+                                <segments>
+                                    <segment title="Min"/>
+                                    <segment title="Normal"/>
+                                    <segment title="Max"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nyF-b4-BLV" firstAttribute="leading" secondItem="6qb-jd-izn" secondAttribute="leadingMargin" constant="10" id="0Rh-Ob-qh4"/>
+                            <constraint firstItem="nyF-b4-BLV" firstAttribute="top" secondItem="nWI-hB-0st" secondAttribute="bottom" constant="100" id="7oK-LN-sp1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nyF-b4-BLV" secondAttribute="trailing" constant="10" id="AMw-p2-EkV"/>
+                            <constraint firstItem="nyF-b4-BLV" firstAttribute="centerX" secondItem="6qb-jd-izn" secondAttribute="centerX" id="Fq0-6f-JSk"/>
+                            <constraint firstItem="vbk-PI-rCn" firstAttribute="centerX" secondItem="6qb-jd-izn" secondAttribute="centerX" id="OgY-Hi-hLE"/>
+                            <constraint firstItem="vbk-PI-rCn" firstAttribute="top" secondItem="nyF-b4-BLV" secondAttribute="bottom" constant="30" id="txJ-0y-Vic"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="importanceSwitch" destination="vbk-PI-rCn" id="Oor-iu-qRt"/>
+                        <outlet property="label" destination="nyF-b4-BLV" id="nVp-9u-jXf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bL9-86-ca9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1174" y="1594"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AA3-fZ-9WB">

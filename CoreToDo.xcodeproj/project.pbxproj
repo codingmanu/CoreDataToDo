@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		802B29EA1DF8FA9900E0F885 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B29E91DF8FA9900E0F885 /* detailViewController.swift */; };
 		806CF3621DF7AECE00E36847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CF3611DF7AECE00E36847 /* AppDelegate.swift */; };
 		806CF3641DF7AECE00E36847 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CF3631DF7AECE00E36847 /* ViewController.swift */; };
 		806CF3671DF7AECE00E36847 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 806CF3651DF7AECE00E36847 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		802B29E91DF8FA9900E0F885 /* detailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		806CF35E1DF7AECE00E36847 /* CoreToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		806CF3611DF7AECE00E36847 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		806CF3631DF7AECE00E36847 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				806CF3611DF7AECE00E36847 /* AppDelegate.swift */,
 				806CF3631DF7AECE00E36847 /* ViewController.swift */,
 				80A6F2FC1DF7B24400E6645A /* AddTaskVC.swift */,
+				802B29E91DF8FA9900E0F885 /* detailViewController.swift */,
 				806CF3651DF7AECE00E36847 /* Main.storyboard */,
 				806CF36B1DF7AECE00E36847 /* Assets.xcassets */,
 				806CF36D1DF7AECE00E36847 /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 				806CF3641DF7AECE00E36847 /* ViewController.swift in Sources */,
 				806CF3621DF7AECE00E36847 /* AppDelegate.swift in Sources */,
 				806CF36A1DF7AECE00E36847 /* CoreToDo.xcdatamodeld in Sources */,
+				802B29EA1DF8FA9900E0F885 /* detailViewController.swift in Sources */,
 				80A6F2FD1DF7B24400E6645A /* AddTaskVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

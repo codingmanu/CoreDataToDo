@@ -43,22 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let task = tasks[indexPath.row]
         
-        switch task.importance {
-        case 0:
-            cell.textLabel?.text = "⭕️\(task.name!)"
-        case 1:
-            cell.textLabel?.text = "❗️\(task.name!)"
-        case 2:
-            cell.textLabel?.text = "‼️\(task.name!)"
-        default:
-            cell.textLabel?.text = "Error"
-        }
-        
-        /*if task.isImportant{
-            cell.textLabel?.text = "😂\(task.name!)"
-        }else{
-            cell.textLabel?.text = task.name
-        }*/
+        cell.textLabel?.text = task.name!
         
         return cell
     }
@@ -96,5 +81,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
     }
+    
+    //using the "showDetail" segue to open a new page with a bigger view of the task
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: tasks[indexPath.row])
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail"{
+            let guest = segue.destination as! detailViewController
+            
+            let senderObj = sender as! Task
+            
+            guest.text = senderObj.name!
+            guest.importance = Int(senderObj.importance)
+        }
+    }
+    
+    
+    
+    
+    
 }
 

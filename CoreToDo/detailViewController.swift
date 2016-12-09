@@ -14,7 +14,7 @@ class detailViewController: UIViewController {
     @IBOutlet weak var importanceSwitch: UISegmentedControl!
     
     //Creating two variables so we can access them from the prepareSegue function
-    var text = ""
+    var text = "eee"
     var importance = 0
 
     override func viewDidLoad() {

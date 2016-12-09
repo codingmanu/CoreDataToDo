@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -85,6 +85,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //using the "showDetail" segue to open a new page with a bigger view of the task
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //navigationController?.performSegue(withIdentifier: "showDetail", sender: tasks[indexPath.row])
         performSegue(withIdentifier: "showDetail", sender: tasks[indexPath.row])
     }
     
@@ -92,17 +93,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail"{
             let guest = segue.destination as! detailViewController
-            
             let senderObj = sender as! Task
             
             guest.text = senderObj.name!
             guest.importance = Int(senderObj.importance)
         }
     }
-    
-    
-    
-    
     
 }
 

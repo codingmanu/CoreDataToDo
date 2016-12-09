@@ -14,6 +14,7 @@
 		806CF36A1DF7AECE00E36847 /* CoreToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 806CF3681DF7AECE00E36847 /* CoreToDo.xcdatamodeld */; };
 		806CF36C1DF7AECE00E36847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 806CF36B1DF7AECE00E36847 /* Assets.xcassets */; };
 		806CF36F1DF7AECE00E36847 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 806CF36D1DF7AECE00E36847 /* LaunchScreen.storyboard */; };
+		80A2E9971DFB348D00368CC1 /* editTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2E9961DFB348C00368CC1 /* editTaskVC.swift */; };
 		80A6F2FD1DF7B24400E6645A /* AddTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6F2FC1DF7B24400E6645A /* AddTaskVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		806CF36B1DF7AECE00E36847 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		806CF36E1DF7AECE00E36847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		806CF3701DF7AECE00E36847 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80A2E9961DFB348C00368CC1 /* editTaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = editTaskVC.swift; sourceTree = "<group>"; };
 		80A6F2FC1DF7B24400E6645A /* AddTaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 				80A6F2FC1DF7B24400E6645A /* AddTaskVC.swift */,
 				802B29E91DF8FA9900E0F885 /* detailViewController.swift */,
 				806CF3651DF7AECE00E36847 /* Main.storyboard */,
+				80A2E9961DFB348C00368CC1 /* editTaskVC.swift */,
 				806CF36B1DF7AECE00E36847 /* Assets.xcassets */,
 				806CF36D1DF7AECE00E36847 /* LaunchScreen.storyboard */,
 				806CF3701DF7AECE00E36847 /* Info.plist */,
@@ -151,6 +154,7 @@
 				806CF36A1DF7AECE00E36847 /* CoreToDo.xcdatamodeld in Sources */,
 				802B29EA1DF8FA9900E0F885 /* detailViewController.swift in Sources */,
 				80A6F2FD1DF7B24400E6645A /* AddTaskVC.swift in Sources */,
+				80A2E9971DFB348D00368CC1 /* editTaskVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

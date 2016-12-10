@@ -97,7 +97,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             guest.text = senderObj.name!
             guest.importance = Int(senderObj.importance)
+        }else if segue.identifier == "addTask"{
+        print(segue.destination)
+        
         }
+        
     }
     
 }

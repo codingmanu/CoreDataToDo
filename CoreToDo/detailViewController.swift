@@ -14,23 +14,35 @@ class detailViewController: UIViewController {
     @IBOutlet weak var importanceSwitch: UISegmentedControl!
     
     //Creating two variables so we can access them from the prepareSegue function
-    var text = "eee"
+    var text = "error"
     var importance = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         label.text = text
         importanceSwitch.selectedSegmentIndex = importance
-    
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-   
-
+    
+    @IBAction func editButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "editTask", sender: self )
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editTask"{
+            let guest = segue.destination as! editTaskVC
+            
+            guest.text = label.text ?? "sss"
+            guest.importance = importanceSwitch.selectedSegmentIndex
+        }
+        
+        
+    }
 }

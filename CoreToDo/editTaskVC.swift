@@ -9,30 +9,54 @@
 import UIKit
 
 class editTaskVC: UIViewController {
-
+    
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var importanceSwitch: UISegmentedControl!
-
+    
+    //Creating two variables so we can access them from the prepareSegue function
+    var text = "error"
+    var importance = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        textField.text = text
+        importanceSwitch.selectedSegmentIndex = importance
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        
+        if textField.text != nil {
+            //Always create a context for coredata
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            print((UIApplication.shared.delegate as! AppDelegate).persistentContainer.name)
+            
+            //We create a task of type "Task" (from coredata).
+            
+            let task = Task(context: context)
+            
+            //we save the name and the importance onto coredata.
+            task.name = textField.text!
+            task.importance = Int64(importanceSwitch.selectedSegmentIndex)
+            
+            //save the context
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            //close the actual window
+            navigationController!.popViewController(animated: true)
+            
+            
+        }
+        
     }
-    */
-
 }

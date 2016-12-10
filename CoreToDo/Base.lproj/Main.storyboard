@@ -65,7 +65,7 @@
         <!--Add TaskVC-->
         <scene sceneID="yOc-F6-fg8">
             <objects>
-                <viewController id="E2M-42-8bl" customClass="AddTaskVC" customModule="CoreToDo" sceneMemberID="viewController">
+                <viewController id="E2M-42-8bl" customClass="AddTaskVC" customModule="CoreToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3eF-Xo-lZK"/>
                         <viewControllerLayoutGuide type="bottom" id="FdZ-FZ-8gR"/>
@@ -92,27 +92,13 @@
                                         </segments>
                                         <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cS-Wr-XQ6">
-                                        <rect key="frame" x="136" y="123" width="103" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="Add Task">
-                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addTaskButtonTapped:" destination="E2M-42-8bl" eventType="touchUpInside" id="zcj-9E-Vzm"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="uwf-gy-FZk" secondAttribute="trailing" constant="15" id="0p8-6O-qK1"/>
                                     <constraint firstItem="g2A-oC-j1p" firstAttribute="centerX" secondItem="Ci6-nD-s5f" secondAttribute="centerX" id="C20-6K-9fY"/>
                                     <constraint firstItem="g2A-oC-j1p" firstAttribute="top" secondItem="uwf-gy-FZk" secondAttribute="bottom" constant="20" id="OsD-TP-eGW"/>
-                                    <constraint firstItem="7cS-Wr-XQ6" firstAttribute="centerX" secondItem="Ci6-nD-s5f" secondAttribute="centerX" id="cT9-XR-3wk"/>
                                     <constraint firstItem="uwf-gy-FZk" firstAttribute="leading" secondItem="Ci6-nD-s5f" secondAttribute="leading" constant="15" id="gxp-vX-iti"/>
-                                    <constraint firstItem="7cS-Wr-XQ6" firstAttribute="top" secondItem="g2A-oC-j1p" secondAttribute="bottom" constant="25" id="is7-ev-Ied"/>
                                     <constraint firstItem="uwf-gy-FZk" firstAttribute="top" secondItem="Ci6-nD-s5f" secondAttribute="top" constant="20" id="rZM-8j-vQo"/>
                                 </constraints>
                             </view>
@@ -125,14 +111,22 @@
                             <constraint firstItem="FdZ-FZ-8gR" firstAttribute="top" secondItem="Ci6-nD-s5f" secondAttribute="bottom" id="hex-cw-Jyu"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xFM-r6-ucQ">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="FhL-FW-ffc">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="E2M-42-8bl" id="SEE-dR-vbQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="importance" destination="g2A-oC-j1p" id="kxl-vC-iza"/>
+                        <outlet property="addButton" destination="FhL-FW-ffc" id="W4N-te-ZSf"/>
+                        <outlet property="importanceSwitch" destination="g2A-oC-j1p" id="sbt-Sk-QV6"/>
                         <outlet property="textField" destination="uwf-gy-FZk" id="mPm-zl-Qci"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COl-e9-esr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2092" y="793"/>
+            <point key="canvasLocation" x="2062" y="793"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="8dv-Vj-LiS">
@@ -188,7 +182,8 @@
                     <navigationItem key="navigationItem" id="xp1-KO-HLa">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="jq6-Hd-K2K">
                             <connections>
-                                <segue destination="Lx7-7m-zT7" kind="show" id="U0K-pV-47e"/>
+                                <action selector="editButtonTapped:" destination="7ku-pq-vhh" id="laW-CP-a68"/>
+                                <segue destination="Lx7-7m-zT7" kind="show" identifier="editTask" id="U0K-pV-47e"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -286,7 +281,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Editing" id="pQm-Dq-37Y">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="9yL-DA-gur"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="9yL-DA-gur">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="Lx7-7m-zT7" id="KsI-9J-YlB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="importanceSwitch" destination="tj5-nh-YY1" id="0TG-7T-4n3"/>

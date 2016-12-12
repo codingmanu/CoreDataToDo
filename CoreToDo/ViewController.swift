@@ -85,7 +85,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //using the "showDetail" segue to open a new page with a bigger view of the task
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //navigationController?.performSegue(withIdentifier: "showDetail", sender: tasks[indexPath.row])
         performSegue(withIdentifier: "showDetail", sender: tasks[indexPath.row])
     }
     

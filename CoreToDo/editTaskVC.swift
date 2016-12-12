@@ -22,9 +22,6 @@ class editTaskVC: UIViewController {
         
         textField.text = text
         importanceSwitch.selectedSegmentIndex = importance
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,12 +31,43 @@ class editTaskVC: UIViewController {
     
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        deleteTask()
+        insertTask()
         
+        //close the current VC
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+
+    
+    func deleteTask(){
+        //we get all the tasks in coredata
+        var tasks: [Task] = [] 
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do {
+            tasks = try context.fetch(Task.fetchRequest())
+        }catch{
+            print("Fetching failed")
+        }
+        
+        //check all tasks in array and delete the current one
+        var task: Task
+        for i in 0..<tasks.count{
+            if tasks[i].name == text{
+                task = tasks[i]
+                context.delete(task)
+            }
+        }
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    }
+    
+    
+    func insertTask(){
         if textField.text != nil {
             //Always create a context for coredata
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            
-            print((UIApplication.shared.delegate as! AppDelegate).persistentContainer.name)
             
             //We create a task of type "Task" (from coredata).
             
@@ -52,11 +80,6 @@ class editTaskVC: UIViewController {
             //save the context
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
-            //close the actual window
-            navigationController!.popViewController(animated: true)
-            
-            
         }
-        
     }
 }

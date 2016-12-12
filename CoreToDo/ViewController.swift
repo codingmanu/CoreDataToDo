@@ -22,6 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,12 +40,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //Necessary funciont 2
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "protoCell", for: indexPath)
         
         let task = tasks[indexPath.row]
         
         cell.textLabel?.text = task.name!
         
+        switch task.importance {
+        case 0:
+            cell.detailTextLabel?.text = "Min"
+        case 1:
+            cell.detailTextLabel?.text = "Normal"
+        case 2:
+            cell.detailTextLabel?.text = "Max"
+        default:
+            print(task.importance)
+        }
+                
         return cell
     }
     
@@ -97,8 +109,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             guest.text = senderObj.name!
             guest.importance = Int(senderObj.importance)
         }else if segue.identifier == "addTask"{
-        print(segue.destination)
-        
+            print(segue.destination)
         }
         
     }

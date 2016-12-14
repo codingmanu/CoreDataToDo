@@ -98,11 +98,11 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g2A-oC-j1p">
-                                        <rect key="frame" x="99" y="70" width="176" height="29"/>
+                                        <rect key="frame" x="75" y="70" width="224" height="29"/>
                                         <segments>
-                                            <segment title="Min"/>
                                             <segment title="Normal"/>
-                                            <segment title="Max"/>
+                                            <segment title="Important"/>
+                                            <segment title="Critical"/>
                                         </segments>
                                         <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
@@ -164,11 +164,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vbk-PI-rCn">
-                                        <rect key="frame" x="99" y="75" width="176" height="29"/>
+                                        <rect key="frame" x="75" y="75" width="224" height="29"/>
                                         <segments>
-                                            <segment title="Min"/>
                                             <segment title="Normal"/>
-                                            <segment title="Max"/>
+                                            <segment title="Important"/>
+                                            <segment title="Critical"/>
                                         </segments>
                                         <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
@@ -228,23 +228,6 @@
             </objects>
             <point key="canvasLocation" x="352.80000000000001" y="792.95352323838085"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="eVo-nq-HmU">
-            <objects>
-                <viewController id="AIt-LH-het" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dgc-UY-Enb"/>
-                        <viewControllerLayoutGuide type="bottom" id="ibh-fL-cPa"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aGr-cf-w7A">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pDb-5B-dVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
         <!--Editing-->
         <scene sceneID="iYz-aJ-7m2">
             <objects>
@@ -267,11 +250,11 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tj5-nh-YY1">
-                                        <rect key="frame" x="99" y="70" width="176" height="29"/>
+                                        <rect key="frame" x="75" y="70" width="224" height="29"/>
                                         <segments>
-                                            <segment title="Min"/>
                                             <segment title="Normal"/>
-                                            <segment title="Max"/>
+                                            <segment title="Important"/>
+                                            <segment title="Critical"/>
                                         </segments>
                                         <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>

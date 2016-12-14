@@ -48,11 +48,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         switch task.importance {
         case 0:
-            cell.detailTextLabel?.text = "Min"
-        case 1:
             cell.detailTextLabel?.text = "Normal"
+            cell.detailTextLabel?.textColor = UIColor.gray
+        case 1:
+            cell.detailTextLabel?.text = "Important"
+            cell.detailTextLabel?.textColor = UIColor.orange
         case 2:
-            cell.detailTextLabel?.text = "Max"
+            cell.textLabel?.textColor = UIColor.red
+            cell.detailTextLabel?.text = "Critical"
+            cell.detailTextLabel?.textColor = UIColor.red
         default:
             print(task.importance)
         }

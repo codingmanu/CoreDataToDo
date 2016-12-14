@@ -24,8 +24,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,7 +97,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //We create a request with NSSortDescriptors to order by name or importance
         let request: NSFetchRequest<Task> = Task.fetchRequest()
-        let nameSort = NSSortDescriptor(key: "name", ascending: true)
+        let nameSort = NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.caseInsensitiveCompare))
         let importanceSort = NSSortDescriptor(key: "importance", ascending: false)
         
         switch sortSwitch.selectedSegmentIndex {
@@ -112,9 +110,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         default:
             break
         }
-            do {
-                //tasks = try context.fetch(Task.fetchRequest())
-                tasks = try context.fetch(request)
+        do {
+            //tasks = try context.fetch(Task.fetchRequest())
+            tasks = try context.fetch(request)
         }catch{
             print("Fetching failed")
         }
@@ -122,23 +120,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    //using the "showDetail" segue to open a new page with a bigger view of the task
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetail", sender: tasks[indexPath.row])
-    }
     
     
+    //If you click on any task, the edit task window will appear
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail"{
-            let guest = segue.destination as! detailViewController
-            let senderObj = sender as! Task
-            
-            guest.task = senderObj
-        }else if segue.identifier == "addTask"{
-            print(segue.destination)
+        if segue.identifier == "editTask"{
+            let guest = segue.destination as! editTaskVC
+            if let senderObj = sender as? Task{
+                guest.task = senderObj
+            }
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "editTask", sender: tasks[indexPath.row])
     }
     
 }

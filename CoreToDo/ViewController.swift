@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //Linking the tableview into the code
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sortSwitch: UISegmentedControl!
+    
     
     //Array of coredata Tasks
     var tasks: [Task] = []
@@ -48,9 +51,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         switch task.importance {
         case 0:
+            cell.textLabel?.textColor = UIColor.black
             cell.detailTextLabel?.text = "Normal"
             cell.detailTextLabel?.textColor = UIColor.gray
         case 1:
+            cell.textLabel?.textColor = UIColor.black
             cell.detailTextLabel?.text = "Important"
             cell.detailTextLabel?.textColor = UIColor.orange
         case 2:
@@ -60,7 +65,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         default:
             print(task.importance)
         }
-                
+        
         return cell
     }
     
@@ -84,13 +89,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    @IBAction func sortSwitch(_ sender: Any) {
+        getData()
+    }
     
     //Saving the data from coredata into the tasks array
     func getData(){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        do {
-            tasks = try context.fetch(Task.fetchRequest())
+        //We create a request with NSSortDescriptors to order by name or importance
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        let nameSort = NSSortDescriptor(key: "name", ascending: true)
+        let importanceSort = NSSortDescriptor(key: "importance", ascending: false)
+        
+        switch sortSwitch.selectedSegmentIndex {
+        case 0:
+            request.sortDescriptors = [nameSort]
+            tableView.reloadData()
+        case 1:
+            request.sortDescriptors = [importanceSort]
+            tableView.reloadData()
+        default:
+            break
+        }
+            do {
+                //tasks = try context.fetch(Task.fetchRequest())
+                tasks = try context.fetch(request)
         }catch{
             print("Fetching failed")
         }

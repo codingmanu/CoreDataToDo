@@ -110,8 +110,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let guest = segue.destination as! detailViewController
             let senderObj = sender as! Task
             
-            guest.text = senderObj.name!
-            guest.importance = Int(senderObj.importance)
+            guest.task = senderObj
         }else if segue.identifier == "addTask"{
             print(segue.destination)
         }

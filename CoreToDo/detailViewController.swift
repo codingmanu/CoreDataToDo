@@ -13,20 +13,21 @@ class detailViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var importanceSwitch: UISegmentedControl!
     
-    //Creating two variables so we can access them from the prepareSegue function
-    var text = "error"
-    var importance = 0
+    //Task we want to edit (passed from another view)
+    var task:Task?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.text = text
-        importanceSwitch.selectedSegmentIndex = importance
+        //We assign the task info to the screen items
+        if task != nil {
+            label.text = task?.name
+            importanceSwitch.selectedSegmentIndex = Int((task?.importance)!)
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -37,10 +38,11 @@ class detailViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editTask"{
-            let guest = segue.destination as! editTaskVC
             
-            guest.text = label.text ?? "sss"
-            guest.importance = importanceSwitch.selectedSegmentIndex
+            //We send the task to the editTaskVC screen
+            
+            let guest = segue.destination as! editTaskVC
+            guest.task = task
         }
         
         
